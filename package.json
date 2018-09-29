@@ -1,0 +1,23 @@
+{
+  "name": "lidarhealth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/findDNA/LIDARHEALTH.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/findDNA/LIDARHEALTH/issues"
+  },
+  "homepage": "https://github.com/findDNA/LIDARHEALTH#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
+  }
+}
