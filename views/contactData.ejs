@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CONTACT</title>
+</head>
+<body>
+    <h1 align="center">简讯</h1>
+    <%for(var i=0;i<data.length;i++){ %>
+      <p>姓名: <span><%=data[i].name%></span></p>
+      <p>邮箱: <span><%=data[i].email%></span></p>
+      <p>联系方式: <span><%=data[i].phone%></span></p>
+      <p>地址: <span><%=data[i].adr%></span></p>
+      <p>留言: <span><%=data[i].message%></span></p>
+      <p align="right"><a href="/delete?id=<%=data[i].id%>">删除</a></p>
+      <p>-----------------------------------------</p>
+<%}%>
+</body>
+
+ </html>

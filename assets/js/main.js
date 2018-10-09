@@ -123,7 +123,7 @@ $(document).ready(function () {
     /*--------------------------------------------
     7. Ajax Contact Form
     --------------------------------------------*/
-    $(".contact-form").on('submit', function () {
+  /*  $(".contact-form").on('submit', function () {
         var rd = this;
         var url = "sendemail.php";
         $.ajax({
@@ -135,7 +135,7 @@ $(document).ready(function () {
             }
         });
         return false;
-    });
+    });*/
 
     /*--------------------------------------------
     8. Fix Navbar
