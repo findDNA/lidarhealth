@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<h1 align="center">姓名</h1>
+	  <%for(var i=0;i<data.length;i++){ %>
+      <p><span><a href="/ans?id=<%=data[i].cid%>"><%=data[i].name%></a></span></p>
+      <!--<p align="right"><a href="/delete?id=<%=data[i].id%>">删除</a></p>-->
+      <br />
+<%}%>
+		
+		
+	%>
+	</body>
+</html>

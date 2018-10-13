@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <h1 align="center">问卷信息</h1>
+姓名:<%=data.ans['entry[field_1]']%><br><br>
+
+性别:<%=data.ans['entry[field_2]']%><br><br>
+
+
+出生日期:<%=data.ans['entry[field_36]']%><br><br>
+
+身高（cm）：<%=data.ans['entry[field_37]']%><br><br>
+
+体重（kg）:<%=data.ans['entry[field_38]']%><br><br>
+
+出生地:<%=data.ans['entry[field_39]']%><br><br>
+
+职业:<%=data.ans['entry[field_40]']%><br><br>
+
+手机:<%=data.ans['entry[field_3]']%><br><br>
+
+邮箱:<%=data.ans['entry[field_5]']%><br><br>
+
+地址:<%=data.ans['entry[field_4][province]']%>&nbsp;<%=data.ans['entry[field_4][city]']%>&nbsp;<%=data.ans['entry[field_4][district]']%>&nbsp;<%=data.ans['entry[field_4][street]']%><br>
+
+是否正在怀孕？（女性填写）<br><br>
+<%=data.ans['entry[field_43]']%>
+<br/>
+
+是否正在更年期？（女性填写）<br><br>
+<%=data.ans['entry[field_44]']%>
+<br />
+
+月经是否规律？（女性填写）<br><br>
+<%=data.ans['entry[field_45]']%>
+<br />
+
+
+小孩数（女性填写）：<%=data.ans['entry[field_8]']%><br><br>
+
+更年期年龄（女性填写）：<%=data.ans['entry[field_9]']%><br><br>
+
+您一周内有多少天运动超过30分钟？<br><br>
+
+<%=data.ans['entry[field_10]']%>
+<br />
+
+您是否吸烟？每天吸多少支？<br><br>
+<%=data.ans['entry[field_11]']%>
+<br>
+您是否喝酒？每天喝多少杯？（200ml啤酒或红酒，50ml白酒算1杯）<br><br>
+
+<%=data.ans['entry[field_12]']%>
+ <br>
+您是否有服用保健品？<br><br>
+
+<%=data.ans['entry[field_13]']%>
+ <br>
+您晚上几点入睡？<br><br>
+<%=data.ans['entry[field_14]']%>
+ <br>
+您每天的睡眠时间是多少？<br><br>
+
+<%=data.ans['entry[field_15]']%>
+  <br>
+
+收集样本前是否空腹6小时？<br><br>
+
+<%=data.ans['entry[field_16]']%>
+ <br>
+您三餐是否规律？<br><br>
+<%=data.ans['entry[field_17]']%>
+ <br>
+您是否吃早餐？<br><br>
+<%=data.ans['entry[field_18]']%>
+ <br>
+您多久吃一次油炸食品？<br><br>
+<%=data.ans['entry[field_19]']%>
+ <br>
+您每天摄入的主食量为多少？<br><br>
+
+<%=data.ans['entry[field_20]']%>
+ <br>
+您平均每天摄入的牛、羊、猪肉多少？<br><br>
+<%=data.ans['entry[field_21]']%>
+ <br>
+您一周吃多少鱼类及其他水产品?<br><br>
+
+<%=data.ans['entry[field_22]']%>
+ <br>
+您一天吃多少水果？<br><br>
+<%=data.ans['entry[field_23]']%>
+ <br>
+
+您一天吃多少蔬菜？<br><br>
+<%=data.ans['entry[field_24]']%>
+ <br>
+
+您平均每天吃几个鸡蛋？<br><br>
+<%=data.ans['entry[field_25]']%>
+ <br>
+
+您平均每天喝多少牛奶（按照1盒250ml计算）<br><br>
+<%=data.ans['entry[field_26]']%>
+ <br>
+
+您一天喝多少软饮料，例如可乐？<br><br>
+<%=data.ans['entry[field_27]']%>
+
+<br>
+
+您一天喝多少水？<br><br>
+<%=data.ans['entry[field_28]']%>
+
+<br>
+
+您是否有以下不适症状：<br><br>
+<%=data.ans['entry[field_29][]']%>
+
+<br>
+其他:<%=data.ans['entry[field_29_other]']%>
+
+<br><br>
+
+您是否有以下病史？<br><br>
+<%=data.ans['entry[field_46][]']%>
+
+<br>
+其他<%=data.ans['entry[field_46_other]']%>
+
+<br><br>
+
+家族病史：<br><br>
+
+关系1：<%=data.ans['entry[field_32]']%><br><br>
+<%=data.ans['entry[field_33][]']%>
+
+<br>
+其他:<%=data.ans['entry[field_33_other]']%>
+
+<br><br>
+
+关系2：<%=data.ans['entry[field_34]']%>
+<br><br>
+
+<%=data.ans['entry[field_35][]']%>
+<br>
+其他:<%=data.ans['entry[field_35_other]']%>
+<br><br>
+我自愿参加健康风险分析（HRA）计划。我已阅读并同意与该计划有关的协议。<br><br>
+<%=data.ans['entry[field_42]']%>
+
+<br>
+
+
+  
+
+<p align="right"><a href="/deleteAns?id=<%=data.id%>">删除</a></p>
+	</body>
+</html>
