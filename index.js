@@ -266,7 +266,7 @@ app.get('/ans',function(req,res){
       
        var ans=querystring.parse(result[0].ans);
        var id_ans={'id':req.query.id,'ans':ans}
-      console.log(id_ans);
+     // console.log(id_ans);
       //console.log(test.data['entry[field_29][]']);
        res.render('ans',{data:id_ans});
        
