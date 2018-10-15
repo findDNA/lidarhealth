@@ -33,11 +33,11 @@
 	<!--[if lt IE 9]><script src="assets/js/html5shiv.min.js"></script><script src="assets/js/respond.min.js"></script><![endif]-->
 	<link rel="icon" href="title.ico" type="image/x-icon"/>
 	
+	
 </head>
 <body>
 
-     
-
+    
 	<!-- Start Page Preloader -->
 	<div id="loading">
 		<div id="loading-center">
@@ -166,6 +166,26 @@
 	<!-- End Slider Area -->
 	<!-- Start Main Container Area -->
 	<div class="container main-container">
+		<!--浮动窗口-->
+		
+		<div id="ad">
+        <a href="question.html" style="text-decoration: none">
+           <img src="assets/images/shou.png" />
+        </a>
+       </div> 
+        <script src="assets/js/admove.js"></script>
+       <script>
+        var ad = new AdMove("ad");
+        ad.Run();
+        function adfloat_close(floatid){
+            $("#"+floatid).hide();
+            //5s后自动显示
+            setTimeout(function(){
+                $("#"+floatid).show();
+            },5000);
+        }
+       </script>
+		
 		<!-- Start Notification Area -->
 		<div class="notification-boxes row">
 			<!-- Start Box #2 -->

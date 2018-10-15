@@ -3,6 +3,8 @@ var bodyParser=require("body-parser");
 var mysql = require('mysql');
 var ejs = require('ejs');
 const querystring = require("querystring");
+var cookieParser=require('cookie-parser');
+var session=require('express-session');
 var pool = mysql.createPool({
   host : 'localhost',
   user : 'root',
@@ -20,6 +22,14 @@ connection.query(sql, function(error, results){
 
 connection.end();*/
 var app = express();
+app.use(cookieParser());
+app.use(session({
+	secret:'12345',
+	cookie:{maxAge:60000},
+	resave:false,
+	saveUninitialized:true
+}));
+
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: false }));  
 /*app.use(express.static(__dirname+'./assets'));
@@ -46,6 +56,10 @@ app.post('/contact', function(req, res){
 
 //查询
 app.get('/queryContact',function(req,res){
+	if(req.session.user!='admin'||req.session.user==null){
+	 	
+	 	res.redirect('./index.html');
+	 }
 	 //res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
    pool.getConnection(function(err,connection){
 	 //res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
@@ -103,6 +117,7 @@ app.get('/delete',function(req,res){
 //问卷调查的增删改查
 //插入
 app.post('/wjdc', function(req, res){
+	
 	pool.getConnection(function(err,connection){
 	// res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
 	  //connection.connect();
@@ -225,6 +240,10 @@ app.post('/wjdc', function(req, res){
 //查询cname
 app.get('/exam',function(req,res){
 	 //res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+	 if(req.session.user!='admin'||req.session.user==null){
+	 	
+	 	res.redirect('./index.html');
+	 }
    pool.getConnection(function(err,connection){
 	 //res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
 	  //connection.connect();
@@ -251,6 +270,10 @@ app.get('/exam',function(req,res){
 //查询question
 app.get('/ans',function(req,res){
 	 //res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+	 if(req.session.user!='admin'||req.session.user==null){
+	 	
+	 	res.redirect('./index.html');
+	 }
    pool.getConnection(function(err,connection){
 	 //res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
 	  //connection.connect();
@@ -312,7 +335,38 @@ app.get('/deleteAns',function(req,res){
 });
 
 });
+//admin
+app.get('/admin',function(req,res){
+//res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+console.log(req.query);
+var name=req.query.name;
+var pwd=req.query.pwd;
+var s_name="admin";
+var s_pwd="lidar1566";
+if(name==s_name){
+	
+	if(pwd==s_pwd){
+		req.session.user=name;
+		res.render('admin',{});
+	}else{
+		
+		res.redirect('./index.html');
+	}
+	
+}else{
+	
+	res.redirect('./index.html');
+	
+}
+ 
+});
+//解决路由宕机问题
+//1、使用了forever守护进程
+//2、检测为捕捉到的异常
 
+process.on('uncaughtException', function (err) {
+    console.log(err);
+});
 
 app.listen(3000, function(){
     console.log('running...')
